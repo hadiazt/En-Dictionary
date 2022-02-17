@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'aviny';
+    src: url('../fonts/aviny/aviny.eot');
+    src: url('../fonts/aviny/aviny.svg') format('svg'),
+        url('../fonts/aviny/aviny.woff2') format('woff2'),
+        url('../fonts/aviny/aviny.woff') format('woff'),
+        url('../fonts/aviny/aviny.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sans';
+    src: url('../fonts/sans/IRANSansWebFaNum.eot');
+    src: url('../fonts/sans/IRANSansWebFaNum.svg') format('svg'),
+        url('../fonts/sans/IRANSansWebFaNum.woff2') format('woff2'),
+        url('../fonts/sans/IRANSansWebFaNum.woff') format('woff'),
+        url('../fonts/sans/IRANSansWebFaNum.ttf') format('truetype');
+}
