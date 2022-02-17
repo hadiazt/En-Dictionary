@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
                 });
             }, 6000);
         }
-    } else if (WORD) {
+    } else {
         res.render("index", {
             icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
             pageTitle: "EN Dictionary",
