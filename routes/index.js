@@ -22,17 +22,16 @@ router.get("/", (req, res) => {
             })
         }).catch(e => { ERR.push(e) && console.log(e) })
 
-        if (OUTPUT || ERR) {
+        if (OUTPUT[0] || ERR[0]) {
             setTimeout(() => {
                 res.render("index", {
                     icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
                     pageTitle: "EN Dictionary",
                     WORD,
                     OUTPUT: OUTPUT[0],
-                    ERR,
+                    ERR: ERR[0],
                     layout: "./"
                 });
-                console.log(ERR);
             }, 6000);
         }
     } else if (WORD) {
@@ -40,8 +39,8 @@ router.get("/", (req, res) => {
             icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
             pageTitle: "EN Dictionary",
             WORD,
-            OUTPUT: OUTPUT,
-            ERR: ERR,
+            OUTPUT: OUTPUT[0],
+            ERR: ERR[0],
             layout: "./"
         });
     }
