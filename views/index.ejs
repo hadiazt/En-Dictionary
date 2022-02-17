@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--  -->
+
+  <meta name="twitter:card" value="summary">
+  <meta name="twitter:title" content="YouTube Channel Info">
+  <meta name="twitter:description" content="Get Any YouTube Channel Info">
+  <meta name="twitter:image" content="https://www.vectorico.com/wp-content/uploads/2018/02/youtube-icon-300x300.png">
+  <meta property="og:title" content="YouTube Channel Info" />
+  <meta property="og:description" content="Get Any YouTube Channel Info">
+  <meta property="og:image" content="https://www.vectorico.com/wp-content/uploads/2018/02/youtube-icon-300x300.png" />
+  <meta name="theme-color" content="#f2d983">
+  <meta name="description" content="Get Any YouTube Channel Info">
+  <meta name="keywords" content="dictionary,en,translate,meaning>
+  <meta name=" author" content="YouTube Channel Info">
+
+
+
+  <!--  -->
+
+  <title>
+    <%= pageTitle %>
+  </title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  </link>
+
+
+  <script src="https://kit.fontawesome.com/31fd7c4de0.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="<%- icon %>">
+  </link>
+
+</head>
+
+<body>
+
+  <% if(!WORD) { %>
+    <nav class="navbar">
+      <a href="/"><img class="name-img" src="<%- icon %>"></a>
+      <form action="/" method="GET">
+        <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+      </form>
+    </nav>
+  
+    <div class="alarm aviny">
+      Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
+    </div>
+  <% } else if (WORD && OUTPUT && ERR === ' ') { %>
+
+    <nav class="navbar">
+      <a href="/"><img class="name-img" src="<%- icon %>"></a>
+      <form action="/" method="GET">
+        <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+      </form>
+    </nav>
+    WORD && OUTPUT && !ERR
+  <% } else if (WORD && OUTPUT && ERR[2]) { %>
+    WORD && OUTPUT && ERR
+    <%- ERR %>
+
+  <% } %>
+
+
+
+
+  <div class="footer sans">
+    <h4>
+      Created By <a class="fotter_a" href="https://hadi-az.me" target="_blank">Hadi.az</a> | <a class="fotter_a" href="https://github.com/hadiazt/En-Dictionary" target="_blank">Source</a>
+      </br>
+    </h4>
+  </div>
+
+</body>
+
+
+
+</html>
