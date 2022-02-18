@@ -21,17 +21,17 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #121414;
+    background: #fff;
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #484e51;
+    background: #0f173b;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #484e51;
+    background: #0f173b;
 }
 
 * {
@@ -42,6 +42,7 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
+    color:#1d2a57;
 }
 
 .sans {
@@ -93,6 +94,17 @@ body {
     color: #999999;
 }
 
+.meaning_sec{
+    margin: 10px;    
+}
+.title{
+    text-align: center;
+    font-size: x-large;
+}
+hr{
+    border: 2px solid #fec400;
+    border-radius: 2px;
+}
 /*  */
 /* .footer {
     position: fixed;
