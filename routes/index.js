@@ -4,43 +4,39 @@ const router = new Router();
 const CambDict = require("camb-dict");
 const dictionary = new CambDict.Dictionary();
 
-var OUTPUT = []
 var ERR = []
 
 router.get("/", (req, res) => {
-    var WORD = req.query.word
+    var WORDI = req.query.word
 
-    if (WORD) {
-        dictionary.meaning(WORD).then(response => {
-            OUTPUT.push({
-                'word': response.word,
-                'meaning': response.meaning,
-                'pronounciation': response.pronounciation,
-                'type': response.type,
-                'examples': response.examples,
-                'audio': response.audio
-            })
-        }).catch(e => { ERR.push(e) && console.log(e) })
-
-        if (OUTPUT[0] || ERR[0]) {
-            setTimeout(() => {
-                res.render("index", {
-                    icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
-                    pageTitle: "EN Dictionary",
-                    WORD,
-                    OUTPUT: OUTPUT[0],
-                    ERR: ERR[0],
-                    layout: "./"
-                });
-            }, 6000);
-        }
+    if (WORDI) {
+        dictionary.meaning(WORDI).then(response => {
+            res.render("index", {
+                icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
+                pageTitle: "EN Dictionary",
+                WORDI,
+                word: response.word,
+                meaning: response.meaning,
+                pronounciation: response.pronounciation,
+                type: response.type,
+                examples: response.examples,
+                audio: response.audio,                
+                layout: "./"
+            });
+        }).catch(e => {
+            res.render("index", {
+                icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
+                pageTitle: "EN Dictionary",
+                WORDI,
+                e,
+                layout: "./"
+            }) && console.log(e)
+        })
     } else {
         res.render("index", {
             icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
             pageTitle: "EN Dictionary",
-            WORD,
-            OUTPUT: OUTPUT[0],
-            ERR: ERR[0],
+            WORDI,
             layout: "./"
         });
     }
