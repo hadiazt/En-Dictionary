@@ -41,41 +41,58 @@
 
 <body>
 
-  <% if(!WORD) { %>
-    <nav class="navbar">
-      <a href="/"><img class="name-img" src="<%- icon %>"></a>
-      <form action="/" method="GET">
-        <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-      </form>
-    </nav>
-  
-    <div class="alarm aviny">
-      Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
-    </div>
-  <% } else if (WORD && OUTPUT && ERR === ' ') { %>
+  <% if(!WORDI) { %>
 
-    <nav class="navbar">
-      <a href="/"><img class="name-img" src="<%- icon %>"></a>
-      <form action="/" method="GET">
-        <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-      </form>
-    </nav>
-    WORD && OUTPUT && !ERR
-  <% } else if (WORD && OUTPUT && ERR[2]) { %>
-    WORD && OUTPUT && ERR
-    <%- ERR %>
+  <nav class="navbar">
+    <a href="/"><img class="name-img" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
+
+  <div class="alarm aviny">
+    Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
+  </div>
+
+  <% } else if (WORDI && word && meaning) { %>
+
+  <nav class="navbar">
+    <a href="/"><img class="name-img" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
+
+  <i>Meaning of <b><%- word %> </b> in English</i>
+  </br>
+  <i><b><%- type %></b></i>
+  </br>
+  /<%- pronounciation %>/
+</br>
+<%- meaning %>
+
+  <% } else if (WORDI && e) { %>
+
+  <nav class="navbar">
+    <a href="/"><img class="name-img" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
+
+  WORD && !OUTPUT && ERR
 
   <% } %>
 
 
 
 
-  <div class="footer sans">
+  <!-- <div class="footer sans">
     <h4>
       Created By <a class="fotter_a" href="https://hadi-az.me" target="_blank">Hadi.az</a> | <a class="fotter_a" href="https://github.com/hadiazt/En-Dictionary" target="_blank">Source</a>
       </br>
     </h4>
-  </div>
+  </div> -->
 
 </body>
 
