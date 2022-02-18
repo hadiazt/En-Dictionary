@@ -15,3 +15,96 @@
         url('../fonts/sans/IRANSansWebFaNum.woff') format('woff'),
         url('../fonts/sans/IRANSansWebFaNum.ttf') format('truetype');
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121414;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #484e51;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484e51;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.sans {
+    font-family: 'sans'
+}
+
+.aviny {
+    font-family: 'aviny'
+}
+
+.navbar {
+    background: #0f173b;
+    height: 50px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.search {
+    text-align: left;
+    margin: -48px auto auto auto;
+    display: block;
+    width: 300px;
+    height: 30px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.alarm {
+    background-color: #EA2F48;
+    color: #fff;
+    padding: 50px;
+    margin: 50px 250px 0 250px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #D20622;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.alarm_a {
+    text-decoration: none;
+    color: #999999;
+}
+
+/*  */
+/* .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0f173b;
+    color: white;
+    text-align: center;
+}
+
+.fotter_a {
+    text-decoration: none;
+    color: #8d7f73;
+} */
