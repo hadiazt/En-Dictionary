@@ -43,44 +43,58 @@
 
   <% if(!WORDI) { %>
 
-  <nav class="navbar">
-    <a href="/"><img class="name-img" src="<%- icon %>"></a>
-    <form action="/" method="GET">
-      <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-    </form>
-  </nav>
+    <nav class="navbar">
+      <a href="/"><img class="logo" src="<%- icon %>"></a>
+      <form action="/" method="GET">
+        <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+      </form>
+    </nav>
 
-  <div class="alarm aviny">
-    Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
-  </div>
+    <div class="alarm aviny">
+      Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
+    </div>
 
   <% } else if (WORDI && word && meaning) { %>
 
-  <nav class="navbar">
-    <a href="/"><img class="name-img" src="<%- icon %>"></a>
-    <form action="/" method="GET">
-      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-    </form>
-  </nav>
+      <nav class="navbar">
+        <a href="/"><img class="logo" src="<%- icon %>"></a>
+        <form action="/" method="GET">
+          <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+        </form>
+      </nav>
 
-  <i>Meaning of <b><%- word %> </b> in English</i>
-  </br>
-  <i><b><%- type %></b></i>
-  </br>
-  /<%- pronounciation %>/
-</br>
-<%- meaning %>
+      <div class="sans meaning_sec">
+        <div class="title"><i>Meaning of <b><%- word %> </b> in English</i></div>
+        <hr class="classic">
 
+        <h3><%- word %></h3>
+        <h4><i><b><%- type %></b></i></h4>
+        <h6>/<%- pronounciation %>/</h6>
+        audio
+        <hr class="yellow">
+
+        </br>
+        <%- meaning %>
+        <% if (examples) { %>
+          <ul>
+            <% examples.forEach(example => { %>
+              <li><i><%- example %></i></li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </div>
+
+  
   <% } else if (WORDI && e) { %>
 
-  <nav class="navbar">
-    <a href="/"><img class="name-img" src="<%- icon %>"></a>
-    <form action="/" method="GET">
-      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-    </form>
-  </nav>
+    <nav class="navbar">
+      <a href="/"><img class="logo" src="<%- icon %>"></a>
+      <form action="/" method="GET">
+        <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+      </form>
+    </nav>
 
-  WORD && !OUTPUT && ERR
+    WORD && !OUTPUT && ERR
 
   <% } %>
 
