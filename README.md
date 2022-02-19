@@ -3,7 +3,9 @@
 <br/>
 En Dictionary
 </h1>
-A Web App Dictionary For Getting Words Meaning / Examples / Pronounciation Using [camb-dict](https://www.npmjs.com/package/camb-dict)
+A Web App Dictionary For Getting Words Meaning / Examples / Pronounciation Using  
+
+[camb-dict](https://www.npmjs.com/package/camb-dict)
 
 [Site & Demo](https://en-word-dictionary.herokuapp.com/)
 <br/>
