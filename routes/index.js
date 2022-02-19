@@ -21,17 +21,28 @@ router.get("/", (req, res) => {
                 pronounciation: response.pronounciation,
                 type: response.type,
                 examples: response.examples,
-                audio: response.audio,                                
+                audio: response.audio,
                 layout: "./"
             });
         }).catch(e => {
             var word = {}
+            var meaning = {}
+            var pronounciation = {}
+            var type = {}
+            var examples = {}
+            var audio = {}
+
             res.render("index", {
                 icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
                 pageTitle: "EN Dictionary",
                 WORDI,
                 word,
-                e,                 
+                meaning,
+                pronounciation,
+                type,
+                examples,
+                audio,
+                e,
                 layout: "./"
             }) && console.log(e)
         })
