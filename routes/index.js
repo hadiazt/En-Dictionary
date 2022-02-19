@@ -10,7 +10,8 @@ router.get("/", (req, res) => {
     var WORDI = req.query.word
 
     if (WORDI) {
-        dictionary.meaning(WORDI).then(response => {
+
+        dictionary.meaning(WORDI.toLowerCase()).then(response => {
             res.render("index", {
                 icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
                 pageTitle: "EN Dictionary",
