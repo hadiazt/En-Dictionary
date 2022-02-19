@@ -55,6 +55,47 @@
   <div class="alarm aviny">
     Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
   </div>
+
+  <% } else { %>
+
+  <% if(word) { %>
+  <nav class="navbar">
+    <a href="/"><img class="logo" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="word" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
+
+  <div class="sans meaning_sec">
+    <div class="title"><i>Meaning of <b><%- word %> </b> in English</i></div>
+    <hr>
+
+    <h3>Word : <%- word %></h3>
+    <h3>Type : <i><b><%- type %></b></i></h3>
+    <h3>Pronounciation : </h3>
+    <% audio.forEach(voice => { %>
+
+    <% if(voice.type === 'audio/mpeg') {%>
+      <audio src="<%- voice.url %>"></audio>
+    <% } %>
+
+    <% }) %>
+    /<%- pronounciation %>/
+    audio
+    <hr>
+
+    </br>
+    <%- meaning %>
+    <% if (examples) { %>
+    <ul>
+      <% examples.forEach(example => { %>
+      <li><i><%- example %></i></li>
+      <% }) %>
+    </ul>
+    <% } %>
+  </div>
+  <% } %>
+
   <% } %>
 
 
