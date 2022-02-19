@@ -23,7 +23,6 @@
 
 
 
-
   <!--  -->
 
   <title>
@@ -45,82 +44,79 @@
 
   <% if(!WORDI) { %>
 
-  <nav class="navbar">
-    <a href="/"><img class="logo" src="<%- icon %>"></a>
-    <form action="/" method="GET">
-      <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-    </form>
-  </nav>
+    <nav class="navbar">
+      <a href="/"><img class="logo" src="<%- icon %>"></a>
+      <form action="/" method="GET">
+        <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+      </form>
+    </nav>
 
-  <div class="alarm aviny">
-    Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
-  </div>
+    <div class="alarm aviny">
+      Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
+    </div>
 
   <% } else { %>
 
-  <% if(word) { %>
-  <nav class="navbar">
-    <a href="/"><img class="logo" src="<%- icon %>"></a>
-    <form action="/" method="GET">
-      <input name="word" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-    </form>
-  </nav>
+    <% if(word && !e) { %>
 
-  <div class="sans meaning_sec">
-    <div class="title"><i>Meaning of <b><%- word %> </b> in English</i></div>
-    <hr>
+      <nav class="navbar">
+        <a href="/"><img class="logo" src="<%- icon %>"></a>
+        <form action="/" method="GET">
+          <input name="word" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+        </form>
+      </nav>
 
-    <h3>Word : <%- word %></h3>
-    <h3>Type : <i><b><%- type %></b></i></h3>
-    <h3>Pronounciation : </h3>
-    /<%- pronounciation %>/
+      <div class="sans meaning_sec">
+        <div class="title"><i>Meaning of <b><%- word %> </b> in English</i></div>
+        <hr>
+
+        <h3>Word : <%- word %></h3>
+        <h3>Type : <i><b><%- type %></b></i></h3>
+        <h3>Pronounciation : </h3>
+        /<%- pronounciation %>/
 
 
-    <% audio.forEach(voice => { %>
+        <% audio.forEach(voice => { %>
+          <% if(voice.type === 'audio/mpeg') {%>
 
-    <% if(voice.type === 'audio/mpeg') {%>
+            <div id="wrapper">
+              <div id='player'>
+                <audio id="music_player">
+                  <source src="<%- voice.url %>" type="<%- voice.type %>" />
+                </audio>
+                <input type="image" src="http://talkerscode.com/webtricks/demo/images/play.png" onclick="play_aud()" id="play_button">
+                <input type="image" src="http://talkerscode.com/webtricks/demo/images/pause.png" onclick="pause_aud()" id="play_button">
+                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
 
-    <div id="wrapper">
-      <div id='player'>
-        <audio id="music_player">
-          <source src="<%- voice.url %>" type="<%- voice.type %>" />
-        </audio>
-        <input type="image" src="http://talkerscode.com/webtricks/demo/images/play.png" onclick="play_aud()" id="play_button">
-        <input type="image" src="http://talkerscode.com/webtricks/demo/images/pause.png" onclick="pause_aud()" id="play_button">
-        <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+              </div>
+            </div>
 
+          <% } %>
+        <% }) %>
+
+        <hr>
+
+        </br>
+        <h3>Meaning :</h3>
+        <h4 class="meaning"><%- meaning %></h4>
+
+        <% if (examples[0]) { %>
+          <h3>Examples :</h3>
+
+          <ul>
+            <% examples.forEach(example => { %>
+              <li><i><%- example %></i></li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <h3>No Example Found !!!</h3>
+        <% } %>
       </div>
-    </div>
-
-    <% } %>
-    <% }) %>
-
-    <hr>
-
-    </br>
-    <%- meaning %>
-
-    <% if (examples) { %>
-    <ul>
-      <% examples.forEach(example => { %>
-      <li><i><%- example %></i></li>
-      <% }) %>
-    </ul>
-    <% } %>
-
-  </div>
-  <% } %>
+      
+    <% } %> 
 
   <% } %>
 
-
-
-  <!-- <div class="footer sans">
-    <h4>
-      Created By <a class="fotter_a" href="https://hadi-az.me" target="_blank">Hadi.az</a> | <a class="fotter_a" href="https://github.com/hadiazt/En-Dictionary" target="_blank">Source</a>
-      </br>
-    </h4>
-  </div> -->
 
 </body>
 
