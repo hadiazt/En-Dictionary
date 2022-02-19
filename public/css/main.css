@@ -114,10 +114,8 @@ hr {
 
 
 #wrapper {
-    text-align: left;
     margin: 10px;
     padding: 0px;
-    width: 995px;
 }
 
 #player {
@@ -135,6 +133,9 @@ input[type="image"] {
     margin: 3px 5px 0 0;
 }
 
+.meaning{
+    margin: 0 0 0 30px;
+}
 /*  */
 /* .footer {
     position: fixed;
