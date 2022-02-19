@@ -73,22 +73,33 @@
     <h3>Word : <%- word %></h3>
     <h3>Type : <i><b><%- type %></b></i></h3>
     <h3>Pronounciation : </h3>
+    /<%- pronounciation %>/
+
+
     <% audio.forEach(voice => { %>
 
     <% if(voice.type === 'audio/mpeg') {%>
-        <audio controls>
-          <source src="<%- voice.url %>" type="<%- voice.type %>">
-          Your browser does not support the audio tag.
-        </audio>
-    <% } %>
 
+    <div id="wrapper">
+      <div id='player'>
+        <audio id="music_player">
+          <source src="<%- voice.url %>" type="<%- voice.type %>" />
+        </audio>
+        <input type="image" src="http://talkerscode.com/webtricks/demo/images/play.png" onclick="play_aud()" id="play_button">
+        <input type="image" src="http://talkerscode.com/webtricks/demo/images/pause.png" onclick="pause_aud()" id="play_button">
+        <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+
+      </div>
+    </div>
+
+    <% } %>
     <% }) %>
-    /<%- pronounciation %>/
-    audio
+
     <hr>
 
     </br>
     <%- meaning %>
+
     <% if (examples) { %>
     <ul>
       <% examples.forEach(example => { %>
@@ -96,6 +107,7 @@
       <% }) %>
     </ul>
     <% } %>
+
   </div>
   <% } %>
 
@@ -112,6 +124,6 @@
 
 </body>
 
-
+<script src="/js/main.js"></script>
 
 </html>
