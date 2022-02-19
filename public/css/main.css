@@ -42,12 +42,13 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
-    color:#1d2a57;
+    color: #1d2a57;
 }
 
 .sans {
     font-family: sans-serif;
 }
+
 .IRAN_sans {
     font-family: 'sans'
 }
@@ -97,17 +98,43 @@ body {
     color: #999999;
 }
 
-.meaning_sec{
-    margin: 10px;    
+.meaning_sec {
+    margin: 10px;
 }
-.title{
+
+.title {
     text-align: center;
     font-size: x-large;
 }
-hr{
+
+hr {
     border: 2px solid #fec400;
     border-radius: 2px;
 }
+
+
+#wrapper {
+    text-align: left;
+    margin: 10px;
+    padding: 0px;
+    width: 995px;
+}
+
+#player {
+    background-color: #0f173b;
+    width: 200px;
+    margin-left: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input[type="image"] {
+    float: left;
+    height: 15px;
+    margin: 3px 5px 0 0;
+}
+
 /*  */
 /* .footer {
     position: fixed;
