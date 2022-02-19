@@ -113,18 +113,20 @@
       </div>
       
     <% } else { %> 
-
-      <nav class="navbar">
-        <a href="/"><img class="logo" src="<%- icon %>"></a>
-        <form action="/" method="GET">
-          <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-        </form>
-      </nav>
+      <% if(e) { %>
+      
+        <nav class="navbar">
+          <a href="/"><img class="logo" src="<%- icon %>"></a>
+          <form action="/" method="GET">
+            <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+          </form>
+        </nav>
   
-      <div class="alarm aviny">
-        <%- e  %>   
-      </div>
-     
+        <div class="alarm aviny">
+           <%- e  %>   
+        </div>
+        
+      <% } %> 
     <% } %>
 
   <% } %>
