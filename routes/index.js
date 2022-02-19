@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
     if (WORDI) {
 
-        dictionary.meaning(WORDI.toLowerCase()).then(response => {
+        dictionary.meaning(WORDI).then(response => {
             res.render("index", {
                 icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
                 pageTitle: "EN Dictionary",
@@ -21,17 +21,19 @@ router.get("/", (req, res) => {
                 pronounciation: response.pronounciation,
                 type: response.type,
                 examples: response.examples,
-                audio: response.audio,                
+                audio: response.audio,                                
                 layout: "./"
             });
         }).catch(e => {
-            res.render("index", {
-                icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
-                pageTitle: "EN Dictionary",
-                WORDI,
-                e,
-                layout: "./"
-            }) && console.log(e)
+            // res.render("index", {
+            //     icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
+            //     pageTitle: "EN Dictionary",
+            //     WORDI,
+                 
+            //     e,                 
+            //     layout: "./"
+            // }) && 
+            console.log(e)
         })
     } else {
         res.render("index", {
