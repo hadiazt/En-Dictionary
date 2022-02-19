@@ -46,6 +46,9 @@ body {
 }
 
 .sans {
+    font-family: sans-serif;
+}
+.IRAN_sans {
     font-family: 'sans'
 }
 
