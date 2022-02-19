@@ -19,7 +19,7 @@
   <meta name="description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
   <meta name="keywords" content="dictionary,en,translate,meaning">
   <meta name="author" content="<%- pageTitle %>">
-  <% } else if (WORDI && word && meaning && !e) { %>
+  <% } else if (WORDI && word && meaning) { %>
   <meta name="twitter:card" value="summary">
   <meta name="twitter:title" content="<%- word %>">
   <meta name="twitter:description" content="<%- meaning %>">
@@ -31,7 +31,7 @@
   <meta name="description" content="<%- meaning %>">
   <meta name="keywords" content="dictionary,en,translate,meaning">
   <meta name="author" content="<%- word %>">
-  <% } else if (WORDI && !word && e) { %>
+  <% } else if (WORDI && e) { %>
   <meta name="twitter:card" value="summary">
   <meta name="twitter:title" content="<%- pageTitle %>">
   <meta name="twitter:description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
