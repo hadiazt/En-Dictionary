@@ -25,15 +25,15 @@ router.get("/", (req, res) => {
                 layout: "./"
             });
         }).catch(e => {
-            // res.render("index", {
-            //     icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
-            //     pageTitle: "EN Dictionary",
-            //     WORDI,
-                 
-            //     e,                 
-            //     layout: "./"
-            // }) && 
-            console.log(e)
+            var word = {}
+            res.render("index", {
+                icon: "https://cdn-icons-png.flaticon.com/512/1902/1902654.png",
+                pageTitle: "EN Dictionary",
+                WORDI,
+                word,
+                e,                 
+                layout: "./"
+            }) && console.log(e)
         })
     } else {
         res.render("index", {
