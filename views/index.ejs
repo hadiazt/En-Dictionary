@@ -9,16 +9,16 @@
   <!--  -->
 
   <meta name="twitter:card" value="summary">
-  <meta name="twitter:title" content="YouTube Channel Info">
-  <meta name="twitter:description" content="Get Any YouTube Channel Info">
-  <meta name="twitter:image" content="https://www.vectorico.com/wp-content/uploads/2018/02/youtube-icon-300x300.png">
-  <meta property="og:title" content="YouTube Channel Info" />
-  <meta property="og:description" content="Get Any YouTube Channel Info">
-  <meta property="og:image" content="https://www.vectorico.com/wp-content/uploads/2018/02/youtube-icon-300x300.png" />
-  <meta name="theme-color" content="#f2d983">
-  <meta name="description" content="Get Any YouTube Channel Info">
-  <meta name="keywords" content="dictionary,en,translate,meaning>
-  <meta name=" author" content="YouTube Channel Info">
+  <meta name="twitter:title" content="<%- pageTitle %>">
+  <meta name="twitter:description" content="We unlock the potential of millions of people. Our qualiﬁcations, assessments, academic publications and original research spread knowledge and spark enquiry.">
+  <meta name="twitter:image" content="<%- icon %>">
+  <meta property="og:title" content="<%- pageTitle %> " />
+  <meta property="og:description" content="We unlock the potential of millions of people. Our qualiﬁcations, assessments, academic publications and original research spread knowledge and spark enquiry.">
+  <meta property="og:image" content="<%- icon %>" />
+  <meta name="theme-color" content="#0f173b">
+  <meta name="description" content="We unlock the potential of millions of people. Our qualiﬁcations, assessments, academic publications and original research spread knowledge and spark enquiry.">
+  <meta name="keywords" content="dictionary,en,translate,meaning">
+  <meta name="author" content="<%- pageTitle %>">
 
 
 
@@ -43,58 +43,58 @@
 
   <% if(!WORDI) { %>
 
-    <nav class="navbar">
-      <a href="/"><img class="logo" src="<%- icon %>"></a>
-      <form action="/" method="GET">
-        <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-      </form>
-    </nav>
+  <nav class="navbar">
+    <a href="/"><img class="logo" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="word" id="search" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
 
-    <div class="alarm aviny">
-      Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
-    </div>
+  <div class="alarm aviny">
+    Welcome To <%- pageTitle %></br>For Start Using, Type The Word In <a class="alarm_a" href="#search">Input</a> Section
+  </div>
 
   <% } else if (WORDI && word && meaning) { %>
 
-      <nav class="navbar">
-        <a href="/"><img class="logo" src="<%- icon %>"></a>
-        <form action="/" method="GET">
-          <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-        </form>
-      </nav>
+  <nav class="navbar">
+    <a href="/"><img class="logo" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
 
-      <div class="sans meaning_sec">
-        <div class="title"><i>Meaning of <b><%- word %> </b> in English : </i></div>
-        <hr>
+  <div class="sans meaning_sec">
+    <div class="title"><i>Meaning of <b><%- word %> </b> in English : </i></div>
+    <hr>
 
-        <h3><%- word %></h3>
-        <h4><i><b><%- type %></b></i></h4>
-        <h6>/<%- pronounciation %>/</h6>
-        audio
-        <hr>
+    <h3><%- word %></h3>
+    <h4><i><b><%- type %></b></i></h4>
+    <h6>/<%- pronounciation %>/</h6>
+    audio
+    <hr>
 
-        </br>
-        <%- meaning %>
-        <% if (examples) { %>
-          <ul>
-            <% examples.forEach(example => { %>
-              <li><i><%- example %></i></li>
-            <% }) %>
-          </ul>
-        <% } %>
-      </div>
+    </br>
+    <%- meaning %>
+    <% if (examples) { %>
+    <ul>
+      <% examples.forEach(example => { %>
+      <li><i><%- example %></i></li>
+      <% }) %>
+    </ul>
+    <% } %>
+  </div>
 
-  
+
   <% } else if (WORDI && e) { %>
 
-    <nav class="navbar">
-      <a href="/"><img class="logo" src="<%- icon %>"></a>
-      <form action="/" method="GET">
-        <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
-      </form>
-    </nav>
+  <nav class="navbar">
+    <a href="/"><img class="logo" src="<%- icon %>"></a>
+    <form action="/" method="GET">
+      <input name="ID" class="search sans" type="text" placeholder="Please Enter The Word To Search">
+    </form>
+  </nav>
 
-    WORD && !OUTPUT && ERR
+  WORD && !OUTPUT && ERR
 
   <% } %>
 
