@@ -75,24 +75,26 @@
         <h3>Pronounciation : </h3>
         /<%- pronounciation %>/
 
-
-        <% audio.forEach(voice => { %>
-          <% if(voice.type === 'audio/mpeg') {%>
-
-            <div id="wrapper">
-              <div id='player'>
-                <audio id="music_player">
-                  <source src="<%- voice.url %>" type="<%- voice.type %>" />
-                </audio>
-                <input type="image" src="http://talkerscode.com/webtricks/demo/images/play.png" onclick="play_aud()" id="play_button">
-                <input type="image" src="http://talkerscode.com/webtricks/demo/images/pause.png" onclick="pause_aud()" id="play_button">
-                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
-
+        <% if (audio) { %>
+          <% audio.forEach(voice => { %>
+            <% if(voice.type === 'audio/mpeg') {%>
+  
+              <div id="wrapper">
+                <div id='player'>
+                  <audio id="music_player">
+                    <source src="<%- voice.url %>" type="<%- voice.type %>" />
+                  </audio>
+                  <input type="image" src="http://talkerscode.com/webtricks/demo/images/play.png" onclick="play_aud()" id="play_button">
+                  <input type="image" src="http://talkerscode.com/webtricks/demo/images/pause.png" onclick="pause_aud()" id="play_button">
+                  <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+  
+                </div>
               </div>
-            </div>
+  
+            <% } %>
+          <% }) %>
+        <% } %>
 
-          <% } %>
-        <% }) %>
 
         <hr>
 
