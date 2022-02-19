@@ -57,7 +57,7 @@
 
   <% } else { %>
 
-    <% if(word && !e) { %>
+    <% if(word) { %>
 
       <nav class="navbar">
         <a href="/"><img class="logo" src="<%- icon %>"></a>
@@ -114,7 +114,7 @@
       </div>
       
     <% } else { %> 
-      
+
       <nav class="navbar">
         <a href="/"><img class="logo" src="<%- icon %>"></a>
         <form action="/" method="GET">
@@ -126,7 +126,7 @@
         <%- e  %>   
       </div>
      
-    <% } 
+    <% } %>
 
   <% } %>
 
