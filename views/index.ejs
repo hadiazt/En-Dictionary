@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--  -->
-<% if (!WORDI) { %>
+  <% if (!WORDI) { %>
   <meta name="twitter:card" value="summary">
   <meta name="twitter:title" content="<%- pageTitle %>">
   <meta name="twitter:description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
@@ -19,7 +19,7 @@
   <meta name="description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
   <meta name="keywords" content="dictionary,en,translate,meaning">
   <meta name="author" content="<%- pageTitle %>">
-<% } else if (WORDI && word && meaning) { %>
+  <% } else if (WORDI && word && meaning && !e) { %>
   <meta name="twitter:card" value="summary">
   <meta name="twitter:title" content="<%- word %>">
   <meta name="twitter:description" content="<%- meaning %>">
@@ -31,7 +31,19 @@
   <meta name="description" content="<%- meaning %>">
   <meta name="keywords" content="dictionary,en,translate,meaning">
   <meta name="author" content="<%- word %>">
-<% }%>
+  <% } else if (WORDI && !word && e) { %>
+  <meta name="twitter:card" value="summary">
+  <meta name="twitter:title" content="<%- pageTitle %>">
+  <meta name="twitter:description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
+  <meta name="twitter:image" content="<%- icon %>">
+  <meta property="og:title" content="<%- pageTitle %> " />
+  <meta property="og:description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
+  <meta property="og:image" content="<%- icon %>" />
+  <meta name="theme-color" content="#0f173b">
+  <meta name="description" content="The and thesaurus for learners of English. Meanings and definitions of words with pronunciations.">
+  <meta name="keywords" content="dictionary,en,translate,meaning">
+  <meta name="author" content="<%- pageTitle %>">
+  <% } %>
 
 
 
